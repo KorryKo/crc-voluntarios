@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary - Warm Orange */
+  --color-primary-50: #FFF7ED;
+  --color-primary-100: #FFEDD5;
+  --color-primary-200: #FED7AA;
+  --color-primary-300: #FDBA74;
+  --color-primary-400: #FB923C;
+  --color-primary-500: #F97316;  /* Main primary */
+  --color-primary-600: #EA580C;  /* Hover state */
+  --color-primary-700: #C2410C;
+  --color-primary-800: #9A3412;
+  --color-primary-900: #7C2D12;
+
+  /* Accent - Sky Blue (complementary) */
+  --color-accent-50: #F0F9FF;
+  --color-accent-100: #E0F2FE;
+  --color-accent-200: #BAE6FD;
+  --color-accent-300: #7DD3FC;
+  --color-accent-400: #38BDF8;
+  --color-accent-500: #0EA5E9;  /* Main accent */
+  --color-accent-600: #0284C7;  /* Hover state */
+  --color-accent-700: #0369A1;
+
+  /* Backgrounds */
+  --color-bg-white: #FFFFFF;
+  --color-bg-warm: #FFFBF7;     /* Warm off-white for sections */
+  --color-bg-light: #FFF7ED;    /* Light orange tint */
+
+  /* Text */
+  --color-text-primary: #1C1917;   /* Near black, warm tint */
+  --color-text-secondary: #57534E; /* Dark gray */
+  --color-text-muted: #A8A29E;     /* Light gray */
+  --color-text-inverse: #FFFFFF;   /* White text on dark bg */
+
+  /* Semantic */
+  --color-success: #22C55E;
+  --color-warning: #FBBF24;
+  --color-error: #EF4444;
+}
+
+@theme inline {
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+}
+
+body {
+  background-color: var(--color-bg-white);
+  color: var(--color-text-primary);
+}
