@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Instagram } from "lucide-react";
 
+const navLinks = [
+  { href: "/", label: "Nuestros Perros" },
+  { href: "/voluntariado", label: "Voluntariado" },
+  { href: "/sobre-nosotros", label: "Sobre Nosotros" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-secondary-900 text-white">
@@ -19,30 +25,16 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold">Enlaces</h3>
             <ul className="mt-2 space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/"
-                  className="text-white/80 transition-colors hover:text-white"
-                >
-                  Nuestros Perros
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/voluntariado"
-                  className="text-white/80 transition-colors hover:text-white"
-                >
-                  Voluntariado
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/sobre-nosotros"
-                  className="text-white/80 transition-colors hover:text-white"
-                >
-                  Sobre Nosotros
-                </Link>
-              </li>
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/80 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
