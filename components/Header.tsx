@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -12,14 +13,15 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="bg-primary-500 text-text-inverse">
+    <header className="bg-white border-b border-secondary-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-white">CRC Voluntarios</span>
+            <span className="text-xl font-bold text-text-primary">CRC Voluntarios</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -29,7 +31,11 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/90 transition-colors hover:text-white"
+                    className={`transition-colors hover:text-secondary-500 ${
+                      pathname === link.href
+                        ? "text-secondary-500 font-medium"
+                        : "text-text-primary"
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -41,7 +47,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-text-primary hover:text-secondary-500 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={isMenuOpen}
@@ -62,7 +68,11 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block py-2 text-white/90 transition-colors hover:text-white"
+                    className={`block py-2 transition-colors hover:text-secondary-500 ${
+                      pathname === link.href
+                        ? "text-secondary-500 font-medium"
+                        : "text-text-primary"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
