@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, PawPrint } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Nuestros Perros" },
@@ -21,6 +21,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
+            <PawPrint size={24} className="text-secondary-500" />
             <span className="text-xl font-bold text-text-primary">CRC Voluntarios</span>
           </Link>
 
