@@ -13,6 +13,9 @@ export const metadata: Metadata = {
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Solo necesitas ser mayor de 18 años y amar a los perros.",
     url: "/voluntariado",
   },
+  alternates: {
+    canonical: "/voluntariado",
+  },
 };
 
 const jsonLd = {

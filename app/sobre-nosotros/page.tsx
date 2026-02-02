@@ -13,6 +13,9 @@ export const metadata: Metadata = {
       "Conoce nuestra historia de más de 10 años ayudando a perros abandonados en Santiago, Chile.",
     url: "/sobre-nosotros",
   },
+  alternates: {
+    canonical: "/sobre-nosotros",
+  },
 };
 
 const jsonLd = {

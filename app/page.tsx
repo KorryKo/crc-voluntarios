@@ -14,6 +14,9 @@ export const metadata: Metadata = {
       "Conoce a los perros disponibles para adopción en nuestro refugio en Santiago, Chile.",
     url: "/",
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const jsonLd = {

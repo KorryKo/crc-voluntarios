@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     description:
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Ayuda a perros abandonados y forma parte de nuestra comunidad.",
   },
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: true,
     follow: true,
