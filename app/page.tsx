@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import DogGrid from "@/components/DogGrid";
 import AdoptionRules from "@/components/AdoptionRules";
-import { dogs } from "@/data/dogs";
+import { getDogs } from "@/lib/dogs";
 
 export const metadata: Metadata = {
   title: "Adopta un Perro | CRC Voluntarios",
@@ -34,7 +34,8 @@ const jsonLd = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const dogs = await getDogs();
   return (
     <>
       <script
