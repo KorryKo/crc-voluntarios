@@ -42,6 +42,7 @@ next-env.d.ts
 
 # project docs (personal)
 ROADMAP.md
+ShelterWebsite.jsx
 
 # IDE
 .idea/

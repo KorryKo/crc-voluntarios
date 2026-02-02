@@ -41,6 +41,16 @@ export default function Home() {
       <HeroSection
         title="Nuestros Perros"
         subtitle="Conoce a los perros que buscan un hogar. Adopta, ven a visitarnos o comparte."
+        cta={
+          <a
+            href="https://wa.me/56987997244?text=Hola%2C%20estoy%20interesado%20en%20adoptar%20un%20perro.%20%C2%BFCu%C3%A1ndo%20y%20c%C3%B3mo%20puedo%20visitarlos%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-full bg-white px-8 py-3 text-lg font-semibold text-secondary-600 shadow-md transition hover:bg-secondary-50"
+          >
+            Quiero adoptar
+          </a>
+        }
       />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <DogGrid dogs={dogs} />

@@ -35,15 +35,15 @@ const steps = [
 
 export default function AdoptionRules() {
   return (
-    <section className="bg-bg-warm py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-bg-warm py-30">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <h2 className="text-center text-3xl font-bold text-text-primary">
           ¿Cómo adoptar?
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-text-secondary">
           Sigue estos pasos para darle un hogar a uno de nuestros perros.
         </p>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {steps.map((step, index) => (
             <div key={index} className="text-center">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary-100">
