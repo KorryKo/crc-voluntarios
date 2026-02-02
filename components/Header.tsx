@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, X, PawPrint } from "lucide-react";
+import { Menu, X, PawPrint, Instagram } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Nuestros Perros" },
@@ -70,6 +70,21 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://www.instagram.com/adopcionescrc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Síguenos en Instagram"
+                  className={`transition-colors duration-300 ${
+                    scrolled
+                      ? "text-text-primary hover:text-secondary-500"
+                      : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  <Instagram size={20} />
+                </a>
+              </li>
             </ul>
           </nav>
 
@@ -116,6 +131,22 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://www.instagram.com/adopcionescrc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2 py-2 transition-colors ${
+                    scrolled
+                      ? "text-text-primary hover:text-secondary-500"
+                      : "text-white/90 hover:text-white"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Instagram size={18} />
+                  Instagram
+                </a>
+              </li>
             </ul>
           </nav>
         </div>

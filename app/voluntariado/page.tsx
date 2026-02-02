@@ -1,6 +1,47 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, CalendarDays, GraduationCap, PartyPopper } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Voluntariado",
+  description:
+    "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Pasea perros, ayuda en su cuidado y forma parte de nuestro equipo.",
+  openGraph: {
+    title: "Voluntariado | CRC Voluntarios",
+    description:
+      "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Solo necesitas ser mayor de 18 años y amar a los perros.",
+    url: "/voluntariado",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Voluntariado - CRC Voluntarios",
+  description:
+    "Programa de voluntariado para el cuidado de perros en refugio municipal de Santiago, Chile.",
+  url: "https://crc-voluntarios.cl/voluntariado",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "CRC Voluntarios",
+    url: "https://crc-voluntarios.cl",
+  },
+  about: {
+    "@type": "VolunteerAction",
+    name: "Voluntariado CRC",
+    description:
+      "Actividades de voluntariado incluyen paseos, juegos, limpieza y baño de perros en el refugio.",
+    location: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Santiago",
+        addressCountry: "CL",
+      },
+    },
+  },
+};
 
 const activities = [
   {
@@ -65,6 +106,10 @@ const steps = [
 export default function Voluntariado() {
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeroSection
         title="Voluntariado"
         subtitle="Únete a nuestro equipo de voluntarios y ayuda a transformar la vida de los perros del refugio."
