@@ -68,19 +68,20 @@ export default function Voluntariado() {
       <HeroSection
         title="Voluntariado"
         subtitle="Únete a nuestro equipo de voluntarios y ayuda a transformar la vida de los perros del refugio."
+
         cta={
           <a
             href="https://wa.me/56987997244?text=Hola%2C%20me%20gustar%C3%ADa%20ser%20voluntario.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20participar%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block rounded-full bg-white px-8 py-3 text-lg font-semibold text-secondary-600 shadow-md transition hover:bg-secondary-50"
+            className="inline-block rounded-full bg-white px-8 py-4 text-base font-bold text-secondary-700 shadow-xl transition hover:bg-secondary-50"
           >
             Quiero ser voluntario
           </a>
         }
       />
 
-      <section className="bg-bg-warm py-24">
+      <section className="bg-bg-warm pt-24 pb-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <h2 className="text-center text-3xl font-bold text-text-primary">
             ¿Qué hacemos como voluntarios?
