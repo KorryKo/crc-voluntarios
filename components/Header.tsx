@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, PawPrint } from "lucide-react";
 
 const navLinks = [
@@ -13,16 +13,40 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-white border-b border-secondary-100">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-xl shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <PawPrint size={24} className="text-secondary-500" />
-            <span className="text-xl font-bold text-text-primary">CRC Voluntarios</span>
+            <PawPrint
+              size={24}
+              className={`transition-colors duration-300 ${
+                scrolled ? "text-secondary-500" : "text-white"
+              }`}
+            />
+            <span
+              className={`text-xl font-bold transition-colors duration-300 ${
+                scrolled ? "text-text-primary" : "text-white"
+              }`}
+            >
+              CRC Voluntarios
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,10 +56,14 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`transition-colors hover:text-secondary-500 ${
+                    className={`transition-colors duration-300 ${
                       pathname === link.href
-                        ? "text-secondary-500 font-medium"
-                        : "text-text-primary"
+                        ? scrolled
+                          ? "text-secondary-500 font-medium"
+                          : "text-white font-medium"
+                        : scrolled
+                          ? "text-text-primary hover:text-secondary-500"
+                          : "text-white/90 hover:text-white"
                     }`}
                   >
                     {link.label}
@@ -48,7 +76,11 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-text-primary hover:text-secondary-500 transition-colors"
+            className={`md:hidden p-2 transition-colors duration-300 ${
+              scrolled
+                ? "text-text-primary hover:text-secondary-500"
+                : "text-white hover:text-white/80"
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={isMenuOpen}
@@ -63,16 +95,20 @@ export default function Header() {
             isMenuOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <nav className="pb-4">
+          <nav className={`pb-4 rounded-b-xl ${scrolled ? "" : "bg-black/20 backdrop-blur-md px-4 rounded-xl"}`}>
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block py-2 transition-colors hover:text-secondary-500 ${
+                    className={`block py-2 transition-colors ${
                       pathname === link.href
-                        ? "text-secondary-500 font-medium"
-                        : "text-text-primary"
+                        ? scrolled
+                          ? "text-secondary-500 font-medium"
+                          : "text-white font-medium"
+                        : scrolled
+                          ? "text-text-primary hover:text-secondary-500"
+                          : "text-white/90 hover:text-white"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >

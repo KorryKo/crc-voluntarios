@@ -26,7 +26,7 @@ export default function HeroSection({
       <div className="absolute bottom-[28%] right-[10%] text-4xl opacity-60 animate-[float_5s_ease-in-out_infinite_0.5s] drop-shadow-md">
         🐾
       </div>
-      <div className="absolute left-[15%] top-[55%] text-3xl opacity-50 animate-[float_7s_ease-in-out_infinite_1s]">
+      <div className="absolute left-[15%] top-[70%] sm:top-[55%] text-3xl opacity-50 animate-[float_7s_ease-in-out_infinite_1s]">
         ❤️
       </div>
 
@@ -51,12 +51,12 @@ export default function HeroSection({
 
       {/* Bottom wave */}
       <svg
-        className="absolute bottom-0 left-0 h-[100px] w-full"
-        viewBox="0 0 1440 100"
+        className="absolute bottom-0 left-0 h-[60px] w-full sm:h-[80px] md:h-[100px]"
+        viewBox="0 0 1440 60"
         preserveAspectRatio="none"
       >
         <path
-          d="M0,50 C360,100 720,0 1080,50 C1260,75 1380,60 1440,50 L1440,100 L0,100 Z"
+          d="M0,40 C480,60 960,0 1440,40 L1440,60 L0,60 Z"
           fill="white"
         />
       </svg>
