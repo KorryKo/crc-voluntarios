@@ -3,7 +3,7 @@ import DogCard from "./DogCard";
 
 export default function DogGrid({ dogs }: { dogs: Dog[] }) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {dogs.map((dog) => (
         <DogCard key={dog.id} dog={dog} />
       ))}

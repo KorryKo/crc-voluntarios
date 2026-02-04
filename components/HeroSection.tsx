@@ -20,13 +20,13 @@ export default function HeroSection({
       <div className="absolute -bottom-[25%] -left-[12%] h-[400px] w-[400px] rounded-[30%_60%_70%_40%/50%_60%_30%_60%] bg-white/8 animate-[blob_10s_ease-in-out_infinite_reverse]" />
 
       {/* Floating elements */}
-      <div className="absolute left-[8%] top-[22%] text-5xl opacity-70 animate-[float_6s_ease-in-out_infinite] drop-shadow-md">
+      <div className="absolute left-[8%] top-[22%] text-5xl opacity-70 animate-[float_6s_ease-in-out_infinite] drop-shadow-md lg:text-7xl">
         🦴
       </div>
-      <div className="absolute bottom-[28%] right-[10%] text-4xl opacity-60 animate-[float_5s_ease-in-out_infinite_0.5s] drop-shadow-md">
+      <div className="absolute bottom-[28%] right-[10%] text-4xl opacity-60 animate-[float_5s_ease-in-out_infinite_0.5s] drop-shadow-md lg:text-6xl">
         🐾
       </div>
-      <div className="absolute left-[15%] top-[70%] sm:top-[55%] text-3xl opacity-50 animate-[float_7s_ease-in-out_infinite_1s]">
+      <div className="absolute left-[15%] top-[70%] sm:top-[55%] text-3xl opacity-50 animate-[float_7s_ease-in-out_infinite_1s] lg:text-5xl">
         ❤️
       </div>
 

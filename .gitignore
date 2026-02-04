@@ -51,3 +51,6 @@ ROADMAP.md
 
 # OS
 Thumbs.db
+
+.vercel
+.env*.local
