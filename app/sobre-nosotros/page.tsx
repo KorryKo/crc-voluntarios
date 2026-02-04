@@ -5,6 +5,8 @@ import { Heart, Shield, Users, PawPrint } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import { getVolunteerPhotos } from "@/lib/volunteers";
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
   description:

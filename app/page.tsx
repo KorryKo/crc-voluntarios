@@ -4,6 +4,8 @@ import DogsSection from "@/components/DogsSection";
 import AdoptionRules from "@/components/AdoptionRules";
 import { getDogs } from "@/lib/dogs";
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Adopta un Perro | CRC Voluntarios",
   description:
