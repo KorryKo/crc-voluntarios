@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Heart, Shield, Users, PawPrint } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
@@ -91,33 +92,44 @@ export default async function SobreNosotros() {
       {/* Nuestra historia */}
       <section className="pt-24 pb-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold text-text-primary">
-              Nuestra Historia
-            </h2>
-            <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
-              <p>
-                CRC Voluntarios nació hace más de 10 años, cuando un pequeño
-                grupo de personas decidió que no podía quedarse de brazos cruzados
-                ante la realidad de los perros abandonados y maltratados en
-                Santiago. Lo que comenzó como visitas esporádicas al refugio
-                municipal se convirtió en un compromiso de vida.
-              </p>
-              <p>
-                Con el tiempo, el grupo fue creciendo. Más personas se sumaron,
-                motivadas por el mismo sentimiento: la convicción de que cada
-                perro merece una vida digna, incluso mientras espera encontrar un
-                hogar definitivo.
-              </p>
-              <p>
-                Hoy somos un grupo organizado de voluntarios que trabaja en
-                colaboración con el refugio municipal. No somos el refugio — somos
-                personas comunes que dedican su tiempo libre a hacer la diferencia.
-                El refugio es administrado por la municipalidad, que se encarga de
-                los rescates, la atención veterinaria y los procesos de adopción.
-                Nosotros nos enfocamos en lo que más necesitan los perros en su día
-                a día: compañía, ejercicio, higiene y cariño.
-              </p>
+          <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:gap-16">
+            <div className="shrink-0">
+              <Image
+                src="/logo-crc.png"
+                alt="Logo CRC Voluntarios"
+                width={280}
+                height={280}
+                className="rounded-full"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-text-primary">
+                Nuestra Historia
+              </h2>
+              <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
+                <p>
+                  CRC Voluntarios nació hace más de 10 años, cuando un pequeño
+                  grupo de personas decidió que no podía quedarse de brazos cruzados
+                  ante la realidad de los perros abandonados y maltratados en
+                  Santiago. Lo que comenzó como visitas esporádicas al refugio
+                  municipal se convirtió en un compromiso de vida.
+                </p>
+                <p>
+                  Con el tiempo, el grupo fue creciendo. Más personas se sumaron,
+                  motivadas por el mismo sentimiento: la convicción de que cada
+                  perro merece una vida digna, incluso mientras espera encontrar un
+                  hogar definitivo.
+                </p>
+                <p>
+                  Hoy somos un grupo organizado de voluntarios que trabaja en
+                  colaboración con el refugio municipal. No somos el refugio — somos
+                  personas comunes que dedican su tiempo libre a hacer la diferencia.
+                  El refugio es administrado por la municipalidad, que se encarga de
+                  los rescates, la atención veterinaria y los procesos de adopción.
+                  Nosotros nos enfocamos en lo que más necesitan los perros en su día
+                  a día: compañía, ejercicio, higiene y cariño.
+                </p>
+              </div>
             </div>
           </div>
         </div>
