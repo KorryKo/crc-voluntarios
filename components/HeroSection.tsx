@@ -14,10 +14,10 @@ export default function HeroSection({
   cta,
 }: HeroSectionProps) {
   return (
-    <section className="relative flex min-h-[75vh] items-center overflow-hidden bg-gradient-to-br from-secondary-500 via-secondary-400 to-secondary-300">
+    <section className="relative flex min-h-[75vh] items-center overflow-hidden bg-linear-to-br from-secondary-500 via-secondary-400 to-secondary-300">
       {/* Decorative blob shapes */}
-      <div className="absolute -right-[8%] -top-[15%] h-[450px] w-[450px] rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-white/12 animate-[blob_8s_ease-in-out_infinite]" />
-      <div className="absolute -bottom-[25%] -left-[12%] h-[400px] w-[400px] rounded-[30%_60%_70%_40%/50%_60%_30%_60%] bg-white/8 animate-[blob_10s_ease-in-out_infinite_reverse]" />
+      <div className="absolute -right-[8%] -top-[15%] h-112.5 w-112.5 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-white/12 animate-[blob_8s_ease-in-out_infinite]" />
+      <div className="absolute -bottom-[25%] -left-[12%] h-100 w-100 rounded-[30%_60%_70%_40%/50%_60%_30%_60%] bg-white/8 animate-[blob_10s_ease-in-out_infinite_reverse]" />
 
       {/* Floating elements */}
       <div className="absolute left-[8%] top-[22%] text-5xl opacity-70 animate-[float_6s_ease-in-out_infinite] drop-shadow-md lg:text-7xl">
@@ -42,7 +42,7 @@ export default function HeroSection({
           {title}
         </h1>
 
-        <p className="mx-auto mb-9 mt-6 max-w-[550px] text-[clamp(17px,2.2vw,20px)] leading-relaxed text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.1)]">
+        <p className="mx-auto mb-9 mt-6 max-w-137.5 text-[clamp(17px,2.2vw,20px)] leading-relaxed text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.1)]">
           {subtitle}
         </p>
 
@@ -51,7 +51,7 @@ export default function HeroSection({
 
       {/* Bottom wave */}
       <svg
-        className="absolute bottom-0 left-0 h-[60px] w-full sm:h-[80px] md:h-[100px]"
+        className="absolute bottom-0 left-0 h-15 w-full sm:h-20 md:h-25"
         viewBox="0 0 1440 60"
         preserveAspectRatio="none"
       >
