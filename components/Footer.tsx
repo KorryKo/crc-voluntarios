@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram } from "lucide-react";
+import { Instagram, Phone, MapPin } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Nuestros Perros" },
@@ -40,8 +40,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold">Síguenos</h3>
-            <div className="mt-2">
+            <h3 className="text-lg font-semibold">Contacto</h3>
+            <div className="mt-2 space-y-2">
               <a
                 href="https://instagram.com/adopcionescrc"
                 target="_blank"
@@ -50,6 +50,22 @@ export default function Footer() {
               >
                 <Instagram size={20} />
                 <span>@adopcionescrc</span>
+              </a>
+              <a
+                href="tel:+56987997244"
+                className="flex items-center gap-2 text-white/80 transition-colors hover:text-white"
+              >
+                <Phone size={20} />
+                <span>+56 9 8799 7244</span>
+              </a>
+              <a
+                href="https://maps.google.com/?q=Av.+Vicuña+Mackenna+1590,+Ñuñoa,+Región+Metropolitana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 text-white/80 transition-colors hover:text-white"
+              >
+                <MapPin size={20} className="shrink-0 mt-0.5" />
+                <span>Av. Vicuña Mackenna 1590, Ñuñoa, Región Metropolitana</span>
               </a>
             </div>
           </div>
