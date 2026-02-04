@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Mars, Venus, Ruler, LucideIcon } from "lucide-react";
 import { Dog, EstadoPerro, Sexo, Tamaño } from "@/types";
+import { calcularEdad } from "@/lib/utils";
 
 const estadoConfig: Record<
   EstadoPerro,
@@ -15,11 +16,6 @@ const estadoConfig: Record<
     label: "Adoptado",
     bg: "bg-accent-100",
     text: "text-accent-700",
-  },
-  "en proceso": {
-    label: "En proceso",
-    bg: "bg-secondary-100",
-    text: "text-secondary-800",
   },
 };
 
@@ -65,7 +61,7 @@ export default function DogCard({ dog }: { dog: Dog }) {
           </span>
         </div>
         <p className="mt-1 flex items-center gap-3 text-sm text-text-secondary">
-          <span>{dog.edad}</span>
+          <span>{calcularEdad(dog.fechaNacimiento)}</span>
           <span className="flex items-center gap-1">
             <Ruler size={14} />
             {tamañoLabels[dog.tamaño]}

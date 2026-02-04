@@ -7,7 +7,7 @@ export type Tamaño = "pequeño" | "mediano" | "grande";
 export interface Dog {
   id: number;
   nombre: string;
-  edad: string;
+  fechaNacimiento: Date;
   sexo: Sexo;
   tamaño: Tamaño;
   foto: string;

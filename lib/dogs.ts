@@ -20,7 +20,7 @@ export async function getDogs(): Promise<Dog[]> {
     return {
       id: dog.id,
       nombre: dog.nombre,
-      edad: dog.edad,
+      fechaNacimiento: new Date(dog.fecha_nacimiento),
       sexo: dog.sexo,
       tamaño: dog.tamano,
       foto,
