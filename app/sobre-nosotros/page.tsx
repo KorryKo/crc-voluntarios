@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import { Heart, Shield, Users, PawPrint } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
+import { getVolunteerPhotos } from "@/lib/volunteers";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
@@ -59,7 +60,13 @@ const values = [
   },
 ];
 
-export default function SobreNosotros() {
+export default async function SobreNosotros() {
+  const volunteerPhotos = await getVolunteerPhotos();
+  const carouselImages = volunteerPhotos.map((photo) => ({
+    src: photo.url,
+    alt: photo.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " "),
+  }));
+
   return (
     <div className="bg-white">
       <script
@@ -153,13 +160,13 @@ export default function SobreNosotros() {
             Algunos momentos junto a nuestros peludos.
           </p>
           <div className="mt-12">
-            <GalleryCarousel
-              images={[
-                { src: "/voluntarios.jpg", alt: "Equipo de voluntarios" },
-                { src: "/pinpon.jpg", alt: "Pin Pon en el refugio" },
-                { src: "/voluntarios.jpg", alt: "Voluntarios con los perros" },
-              ]}
-            />
+            {carouselImages.length > 0 ? (
+              <GalleryCarousel images={carouselImages} />
+            ) : (
+              <p className="text-center text-text-secondary">
+                No hay fotos disponibles.
+              </p>
+            )}
           </div>
         </div>
       </section>

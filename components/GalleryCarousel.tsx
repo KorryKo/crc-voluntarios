@@ -54,39 +54,45 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
       </div>
 
       {/* Arrows */}
-      <button
-        onClick={handlePrev}
-        aria-label="Foto anterior"
-        className="absolute left-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 text-text-primary shadow-md backdrop-blur-sm transition hover:bg-white"
-      >
-        <ChevronLeft className="h-6 w-6" />
-      </button>
-      <button
-        onClick={handleNext}
-        aria-label="Foto siguiente"
-        className="absolute right-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 text-text-primary shadow-md backdrop-blur-sm transition hover:bg-white"
-      >
-        <ChevronRight className="h-6 w-6" />
-      </button>
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={handlePrev}
+            aria-label="Foto anterior"
+            className="absolute left-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 text-text-primary shadow-md backdrop-blur-sm transition hover:bg-white"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={handleNext}
+            aria-label="Foto siguiente"
+            className="absolute right-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 text-text-primary shadow-md backdrop-blur-sm transition hover:bg-white"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+        </>
+      )}
 
       {/* Dots */}
-      <div className="mt-4 flex justify-center gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setAutoPlay(false);
-              goTo(index);
-            }}
-            aria-label={`Ir a foto ${index + 1}`}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              index === current
-                ? "w-8 bg-secondary-500"
-                : "w-2.5 bg-secondary-200"
-            }`}
-          />
-        ))}
-      </div>
+      {images.length > 1 && (
+        <div className="mt-4 flex justify-center gap-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setAutoPlay(false);
+                goTo(index);
+              }}
+              aria-label={`Ir a foto ${index + 1}`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                index === current
+                  ? "w-8 bg-secondary-500"
+                  : "w-2.5 bg-secondary-200"
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
