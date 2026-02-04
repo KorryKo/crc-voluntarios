@@ -32,7 +32,7 @@ export const dogs: Dog[] = [
     foto: "/pinpon.jpg",
     descripcion:
       "Rocky es un perro leal y protector. Está entrenado en comandos básicos y busca un hogar con patio.",
-    estado: "en proceso",
+    estado: "disponible",
   },
   {
     id: 4,

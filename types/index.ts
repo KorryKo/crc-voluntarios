@@ -1,4 +1,4 @@
-export type EstadoPerro = "disponible" | "adoptado" | "en proceso";
+export type EstadoPerro = "disponible" | "adoptado";
 
 export type Sexo = "macho" | "hembra";
 

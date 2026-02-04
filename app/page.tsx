@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
-import DogGrid from "@/components/DogGrid";
+import DogsSection from "@/components/DogsSection";
 import AdoptionRules from "@/components/AdoptionRules";
 import { getDogs } from "@/lib/dogs";
 
@@ -64,7 +64,7 @@ export default async function Home() {
         <p className="mx-auto mb-12 max-w-2xl text-center text-text-secondary">
           Conoce a los peludos que buscan un hogar lleno de amor.
         </p>
-        <DogGrid dogs={dogs} />
+        <DogsSection dogs={dogs} />
       </div>
       <AdoptionRules />
     </>
