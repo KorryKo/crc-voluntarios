@@ -24,6 +24,7 @@ export async function getDogs(): Promise<Dog[]> {
       sexo: dog.sexo,
       tamaño: dog.tamano,
       foto,
+      fotoPath: dog.foto ?? "",
       descripcion: dog.descripcion,
       estado: dog.estado,
     };

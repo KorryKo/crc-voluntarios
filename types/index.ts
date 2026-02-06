@@ -11,6 +11,7 @@ export interface Dog {
   sexo: Sexo;
   tamaño: Tamaño;
   foto: string;
+  fotoPath: string;
   descripcion: string;
   estado: EstadoPerro;
 }
