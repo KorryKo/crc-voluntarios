@@ -22,7 +22,7 @@ export default function DogsSection({ dogs }: { dogs: Dog[] }) {
           />
           <button
             onClick={() => setFilter("disponible")}
-            className={`relative z-10 rounded-full px-6 py-2 text-sm font-semibold transition-colors duration-300 ${
+            className={`relative z-10 cursor-pointer rounded-full px-6 py-2 text-sm font-semibold transition-colors duration-300 ${
               filter === "disponible" ? "text-white" : "text-text-secondary hover:text-text-primary"
             }`}
           >
@@ -30,7 +30,7 @@ export default function DogsSection({ dogs }: { dogs: Dog[] }) {
           </button>
           <button
             onClick={() => setFilter("adoptado")}
-            className={`relative z-10 rounded-full px-6 py-2 text-sm font-semibold transition-colors duration-300 ${
+            className={`relative z-10 cursor-pointer rounded-full px-6 py-2 text-sm font-semibold transition-colors duration-300 ${
               filter === "adoptado" ? "text-white" : "text-text-secondary hover:text-text-primary"
             }`}
           >
