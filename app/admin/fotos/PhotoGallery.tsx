@@ -70,7 +70,7 @@ export default function PhotoGallery({
         <button
           onClick={() => fileRef.current?.click()}
           disabled={uploading}
-          className="inline-flex items-center gap-2 rounded-lg bg-(--color-secondary-500) px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-(--color-secondary-600) disabled:opacity-50"
+          className="inline-flex items-center gap-2 rounded-lg bg-secondary-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-secondary-600 disabled:opacity-50"
         >
           <Upload size={16} />
           {uploading ? "Subiendo..." : "Subir foto"}
@@ -96,7 +96,7 @@ export default function PhotoGallery({
                   className="object-cover"
                 />
               </div>
-              <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
+              <div className="absolute inset-0 flex items-end justify-center bg-linear-to-t from-black/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
                 {confirm === photo.name ? (
                   <div className="mb-3 flex gap-2">
                     <button

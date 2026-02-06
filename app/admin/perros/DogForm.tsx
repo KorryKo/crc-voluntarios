@@ -97,7 +97,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
             required
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
-            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-(--color-secondary-500) focus:ring-1 focus:ring-(--color-secondary-500)"
+            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
           />
         </div>
 
@@ -111,7 +111,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
             required
             value={fechaNacimiento}
             onChange={(e) => setFechaNacimiento(e.target.value)}
-            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-(--color-secondary-500) focus:ring-1 focus:ring-(--color-secondary-500)"
+            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
           />
         </div>
 
@@ -125,7 +125,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
               required
               value={sexo}
               onChange={(e) => setSexo(e.target.value as Sexo)}
-              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-(--color-secondary-500) focus:ring-1 focus:ring-(--color-secondary-500)"
+              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
             >
               <option value="" disabled>
                 Seleccionar
@@ -144,7 +144,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
               required
               value={tamano}
               onChange={(e) => setTamano(e.target.value as Tamaño)}
-              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-(--color-secondary-500) focus:ring-1 focus:ring-(--color-secondary-500)"
+              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
             >
               <option value="" disabled>
                 Seleccionar
@@ -165,7 +165,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
             required
             value={estado}
             onChange={(e) => setEstado(e.target.value as EstadoPerro)}
-            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-(--color-secondary-500) focus:ring-1 focus:ring-(--color-secondary-500)"
+            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
           >
             <option value="disponible">Disponible</option>
             <option value="adoptado">Adoptado</option>
@@ -181,7 +181,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
             rows={4}
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}
-            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-(--color-secondary-500) focus:ring-1 focus:ring-(--color-secondary-500)"
+            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
           />
         </div>
 
@@ -204,7 +204,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
           <button
             type="submit"
             disabled={submitting}
-            className="rounded-lg bg-(--color-secondary-500) px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-(--color-secondary-600) disabled:opacity-50"
+            className="rounded-lg bg-secondary-500 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-secondary-600 disabled:opacity-50"
           >
             {submitting ? "Guardando..." : dog ? "Guardar cambios" : "Crear perro"}
           </button>

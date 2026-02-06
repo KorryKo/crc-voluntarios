@@ -19,7 +19,7 @@ export default function AdminSidebar({ email }: { email: string }) {
     <>
       {/* Mobile header */}
       <div className="flex items-center justify-between border-b border-gray-200 bg-white px-4 py-3 md:hidden">
-        <span className="text-lg font-bold text-(--color-secondary-500)">
+        <span className="text-lg font-bold text-secondary-500">
           CRC Admin
         </span>
         <button onClick={() => setOpen(!open)} className="text-(--color-text-secondary)">
@@ -42,7 +42,7 @@ export default function AdminSidebar({ email }: { email: string }) {
         }`}
       >
         <div className="hidden border-b border-gray-200 px-6 py-5 md:block">
-          <span className="text-lg font-bold text-(--color-secondary-500)">
+          <span className="text-lg font-bold text-secondary-500">
             CRC Admin
           </span>
         </div>
@@ -57,7 +57,7 @@ export default function AdminSidebar({ email }: { email: string }) {
                 onClick={() => setOpen(false)}
                 className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "bg-(--color-secondary-50) text-(--color-secondary-600)"
+                    ? "bg-secondary-50 text-secondary-600"
                     : "text-(--color-text-secondary) hover:bg-gray-100"
                 }`}
               >

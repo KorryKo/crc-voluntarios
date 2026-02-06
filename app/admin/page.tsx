@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
         <div className="mt-3 flex flex-wrap gap-3">
           <Link
             href="/admin/perros"
-            className="inline-flex items-center gap-2 rounded-lg bg-(--color-secondary-500) px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-(--color-secondary-600)"
+            className="inline-flex items-center gap-2 rounded-lg bg-secondary-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-secondary-600"
           >
             <Dog size={16} />
             Ver perros

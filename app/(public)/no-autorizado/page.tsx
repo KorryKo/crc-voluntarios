@@ -16,7 +16,7 @@ export default function NoAutorizadoPage() {
         <div className="flex flex-col gap-3">
           <a
             href="/auth/signout"
-            className="inline-flex items-center justify-center rounded-lg bg-(--color-secondary-500) px-6 py-3 font-medium text-white transition-colors hover:bg-(--color-secondary-600)"
+            className="inline-flex items-center justify-center rounded-lg bg-secondary-500 px-6 py-3 font-medium text-white transition-colors hover:bg-secondary-600"
           >
             Cerrar sesión
           </a>

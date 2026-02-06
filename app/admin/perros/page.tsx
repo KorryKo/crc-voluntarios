@@ -16,7 +16,7 @@ export default async function AdminPerrosPage() {
         </h1>
         <Link
           href="/admin/perros/nuevo"
-          className="inline-flex items-center gap-2 rounded-lg bg-(--color-secondary-500) px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-(--color-secondary-600)"
+          className="inline-flex items-center gap-2 rounded-lg bg-secondary-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-secondary-600"
         >
           <Plus size={16} />
           Agregar perro

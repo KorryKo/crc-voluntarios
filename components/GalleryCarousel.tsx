@@ -77,7 +77,7 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
             alt={images[current].alt}
             width={1200}
             height={600}
-            className="h-[300px] w-full object-contain transition-all duration-500 sm:h-[400px] lg:h-[500px]"
+            className="h-75 w-full object-contain transition-all duration-500 sm:h-100 lg:h-125"
             priority
           />
         </div>
