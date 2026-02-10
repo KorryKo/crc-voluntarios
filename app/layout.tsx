@@ -37,6 +37,14 @@ export const metadata: Metadata = {
     title: "CRC Voluntarios | Refugio de Perros en Santiago, Chile",
     description:
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Ayuda a perros abandonados y forma parte de nuestra comunidad.",
+    images: [
+      {
+        url: "/crc-logo-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "CRC Voluntarios - Refugio de Perros en Santiago, Chile",
+      },
+    ],
   },
   alternates: {
     canonical: "/",
