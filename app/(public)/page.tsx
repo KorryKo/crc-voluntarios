@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import DogsSection from "@/components/DogsSection";
 import AdoptionRules from "@/components/AdoptionRules";
+import DonationSection from "@/components/DonationSection";
 import { getDogs } from "@/lib/dogs";
 
 export const revalidate = 0;
@@ -68,6 +69,7 @@ export default async function Home() {
         <DogsSection dogs={dogs} />
       </div>
       <AdoptionRules />
+      <DonationSection />
     </>
   );
 }

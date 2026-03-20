@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
-import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, CalendarDays, GraduationCap, PartyPopper } from "lucide-react";
+import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, ClipboardList, GraduationCap, PartyPopper, UserCheck, Clock, Users, HandHeart, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Voluntariado",
@@ -87,22 +87,22 @@ const steps = [
       "Escríbenos por WhatsApp para contarnos que te interesa ser voluntario.",
   },
   {
-    icon: CalendarDays,
-    title: "Elige tus días de capacitación",
+    icon: ClipboardList,
+    title: "Proceso de inducción",
     description:
-      "La capacitación se realiza los martes, miércoles y jueves. Elige los días que mejor te acomoden.",
+      "Te presentamos a cada can, sus necesidades, miedos, gustos, preferencias de paseo, carácter y cuidados especiales.",
   },
   {
     icon: GraduationCap,
-    title: "Completa la capacitación",
+    title: "Completa las asistencias",
     description:
-      "Durante aproximadamente una semana, aprenderás a pasear a los perros acompañado de uno de nuestros voluntarios.",
+      "Normalmente son 4 o 5 asistencias de inducción, acompañado de nuestros voluntarios experimentados.",
   },
   {
     icon: PartyPopper,
     title: "¡Ya eres voluntario!",
     description:
-      "Una vez completada la capacitación, puedes venir cualquier día en horario de funcionamiento del refugio, a tu propio ritmo.",
+      "Firmas como voluntario y puedes venir eligiendo tu propio horario.",
   },
 ];
 
@@ -170,15 +170,26 @@ export default function Voluntariado() {
       </section>
 
       <section className="py-24">
-        <div className="mx-auto max-w-3xl rounded-full bg-secondary-500 px-12 py-10 text-center">
-          <h2 className="text-3xl font-bold text-white">
+        <div className="mx-auto max-w-3xl px-6 sm:px-10">
+          <h2 className="text-center text-3xl font-bold text-text-primary">
             Requisitos
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/90 leading-relaxed">
-            Para ser voluntario solo necesitas ser mayor de 18 años y, lo más
-            importante, tener amor por los perros y ganas de ayudar a mejorar
-            su calidad de vida.
-          </p>
+          <div className="mt-10 rounded-2xl bg-white p-8 shadow-md ring-1 ring-black/5">
+            <ul className="space-y-4">
+              {[
+                { icon: UserCheck, text: "Ser mayor de edad." },
+                { icon: Clock, text: "Tiempo mínimo de dos horas a la semana para estar con ellos." },
+                { icon: Users, text: "Disposición de aprender y trabajar en grupo." },
+                { icon: HandHeart, text: "Respeto y cariño hacia toda especie, como a un igual." },
+                { icon: ShieldCheck, text: "Responsabilidad para cumplir el compromiso voluntario de asistir." },
+              ].map((req, index) => (
+                <li key={index} className="flex items-start gap-3 text-text-secondary">
+                  <req.icon className="mt-0.5 h-5 w-5 shrink-0 text-secondary-500" />
+                  <span className="text-sm">{req.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

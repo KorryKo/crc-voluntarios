@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
-import { Heart, Shield, Users, PawPrint } from "lucide-react";
+import { Heart, Shield, Footprints, PawPrint } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import { getVolunteerPhotos } from "@/lib/volunteers";
 
@@ -36,30 +36,30 @@ const jsonLd = {
   },
 };
 
-const values = [
+const queHacemos = [
+  {
+    icon: Footprints,
+    title: "Paseos y compañía",
+    description:
+      "Les brindamos lo más cercano posible a la vida en familia: paseos, juegos y compañía diaria.",
+  },
   {
     icon: Heart,
-    title: "Amor por los animales",
+    title: "Rehabilitación",
     description:
-      "Todo lo que hacemos nace del cariño y respeto por los perros que cuidamos cada día.",
+      "Acompañamos a los canes en su recuperación de traumas, con paciencia y cariño.",
   },
   {
     icon: Shield,
-    title: "Compromiso",
+    title: "Cuidados especiales",
     description:
-      "Llevamos más de 10 años dedicados a mejorar la vida de los perros del refugio, sin importar las dificultades.",
-  },
-  {
-    icon: Users,
-    title: "Comunidad",
-    description:
-      "Somos una familia de voluntarios unidos por un mismo propósito: darles una vida digna mientras encuentran un hogar.",
+      "Baños, medicamentos, consultas a especialistas, exámenes médicos, camas y ropa de invierno.",
   },
   {
     icon: PawPrint,
-    title: "Bienestar animal",
+    title: "Salud física y mental",
     description:
-      "Nos enfocamos en que cada perro tenga una estadía lo más agradable posible: paseos, juegos, cariño y cuidado.",
+      "El cuidado veterinario está en manos del centro, y nosotros les brindamos el bienestar emocional que necesitan.",
   },
 ];
 
@@ -123,13 +123,17 @@ export default async function SobreNosotros() {
                   hogar definitivo.
                 </p>
                 <p>
-                  Hoy somos un grupo organizado de voluntarios que trabaja en
-                  el Centro de Rescate Canino de Ñuñoa. No somos el refugio — somos
-                  personas comunes que dedican su tiempo libre a hacer la diferencia.
-                  El centro es administrado por la municipalidad, que se encarga de
-                  los rescates, la atención veterinaria y los procesos de adopción.
-                  Nosotros nos enfocamos en lo que más necesitan los perros en su día
-                  a día: compañía, ejercicio, higiene y cariño.
+                  Hoy nuestra agrupación tiene un convenio de colaboración con la
+                  Ilustre Municipalidad de Ñuñoa para trabajar en conjunto en el
+                  Centro de Rescate Canino, ubicado en Vicuña Mackenna 1590. Desde
+                  los inicios del centro, hemos estado cuidando y rehabilitando a
+                  los canes que llegan producto de abandono y otras formas de
+                  maltrato.
+                </p>
+                <p>
+                  Nuestra función es cuidar, rehabilitar y acompañar con amor a los
+                  canes hasta lograr su adopción en un buen hogar, que es nuestra
+                  misión primordial.
                 </p>
               </div>
             </div>
@@ -141,22 +145,23 @@ export default async function SobreNosotros() {
       <section className="bg-bg-warm py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <h2 className="text-center text-3xl font-bold text-text-primary">
-            ¿Qué nos mueve?
+            ¿Qué hacemos?
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-text-secondary">
-            Nuestros valores guían cada acción que tomamos en el refugio.
+            Como todo ser sintiente y gregario, los canes necesitan salud física
+            y mental en un entorno cuidado y respetuoso de su especie.
           </p>
           <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, index) => (
+            {queHacemos.map((item, index) => (
               <div key={index} className="text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary-100">
-                  <value.icon className="h-7 w-7 text-secondary-600" />
+                  <item.icon className="h-7 w-7 text-secondary-600" />
                 </div>
                 <h3 className="mt-4 text-lg font-bold text-text-primary">
-                  {value.title}
+                  {item.title}
                 </h3>
                 <p className="mt-2 text-sm text-text-secondary">
-                  {value.description}
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -188,12 +193,11 @@ export default async function SobreNosotros() {
       {/* Nuestro rol */}
       <section className="py-24">
         <div className="mx-auto max-w-3xl rounded-full bg-secondary-500 px-12 py-10 text-center">
-          <h2 className="text-3xl font-bold text-white">Nuestro Rol</h2>
+          <h2 className="text-3xl font-bold text-white">Nuestra Misión</h2>
           <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/90">
-            Somos el puente entre los perros y las personas que quieren ayudar.
-            Conectamos a posibles adoptantes con la administración del refugio y
-            nos aseguramos de que cada perro reciba atención y cariño todos los
-            días.
+            Cuidar, rehabilitar y acompañar con amor a los canes hasta lograr
+            su adopción en un buen hogar. Somos el puente entre los perros y
+            las familias que les darán una nueva vida.
           </p>
         </div>
       </section>
