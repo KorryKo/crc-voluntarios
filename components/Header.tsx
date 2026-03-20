@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, X, PawPrint, Instagram } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Instagram } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Nuestros Perros" },
+  { href: "/", label: "Inicio" },
   { href: "/voluntariado", label: "Voluntariado" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
 ];
@@ -31,21 +32,23 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
+        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-20" : "h-24"}`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <PawPrint
-              size={24}
-              className={`transition-colors duration-300 ${
-                scrolled ? "text-secondary-500" : "text-white"
-              }`}
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo-crc.png"
+              alt="Logo Agrupación Voluntarios del rescate Canino ONG"
+              width={40}
+              height={40}
+              className={`rounded-full transition-all duration-300 ${scrolled ? "w-10 h-10" : "w-10 h-10 lg:w-12 lg:h-12"}`}
             />
             <span
-              className={`text-xl font-bold transition-colors duration-300 ${
+              className={`flex flex-col leading-tight font-bold transition-colors duration-300 ${
                 scrolled ? "text-text-primary" : "text-white"
               }`}
             >
-              CRC Voluntarios
+              <span className="text-base sm:text-lg">Agrupación Voluntarios</span>
+              <span className="text-sm sm:text-base font-semibold opacity-80">del rescate Canino ONG</span>
             </span>
           </Link>
 

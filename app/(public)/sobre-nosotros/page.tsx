@@ -10,9 +10,9 @@ export const revalidate = 0;
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
   description:
-    "Somos un grupo de voluntarios que trabaja junto al refugio municipal de Santiago para mejorar la calidad de vida de los perros abandonados y maltratados.",
+    "Somos un grupo de voluntarios que trabaja en el Centro de Rescate Canino de Ñuñoa para mejorar la calidad de vida de los perros abandonados y maltratados.",
   openGraph: {
-    title: "Sobre Nosotros | CRC Voluntarios",
+    title: "Sobre Nosotros | Agrupación Voluntarios del rescate Canino ONG",
     description:
       "Conoce nuestra historia de más de 10 años ayudando a perros abandonados en Santiago, Chile.",
     url: "/sobre-nosotros",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Sobre Nosotros - CRC Voluntarios",
+  name: "Sobre Nosotros - Agrupación Voluntarios del rescate Canino ONG",
   description:
-    "Grupo de voluntarios dedicados al bienestar de perros en refugio municipal de Santiago, Chile.",
+    "Grupo de voluntarios dedicados al bienestar de perros en el Centro de Rescate Canino de Ñuñoa, Santiago, Chile.",
   url: "https://crc-voluntarios.cl/sobre-nosotros",
   isPartOf: {
     "@type": "WebSite",
-    name: "CRC Voluntarios",
+    name: "Agrupación Voluntarios del rescate Canino ONG",
     url: "https://crc-voluntarios.cl",
   },
 };
@@ -98,7 +98,7 @@ export default async function SobreNosotros() {
             <div className="shrink-0">
               <Image
                 src="/logo-crc.png"
-                alt="Logo CRC Voluntarios"
+                alt="Logo Agrupación Voluntarios del rescate Canino ONG"
                 width={280}
                 height={280}
                 className="rounded-full"
@@ -110,11 +110,11 @@ export default async function SobreNosotros() {
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
                 <p>
-                  CRC Voluntarios nació hace más de 10 años, cuando un pequeño
+                  Agrupación Voluntarios del rescate Canino ONG nació hace más de 10 años, cuando un pequeño
                   grupo de personas decidió que no podía quedarse de brazos cruzados
                   ante la realidad de los perros abandonados y maltratados en
-                  Santiago. Lo que comenzó como visitas esporádicas al refugio
-                  municipal se convirtió en un compromiso de vida.
+                  Santiago. Lo que comenzó como visitas esporádicas al Centro de
+                  Rescate Canino de Ñuñoa se convirtió en un compromiso de vida.
                 </p>
                 <p>
                   Con el tiempo, el grupo fue creciendo. Más personas se sumaron,
@@ -124,9 +124,9 @@ export default async function SobreNosotros() {
                 </p>
                 <p>
                   Hoy somos un grupo organizado de voluntarios que trabaja en
-                  colaboración con el refugio municipal. No somos el refugio — somos
+                  el Centro de Rescate Canino de Ñuñoa. No somos el refugio — somos
                   personas comunes que dedican su tiempo libre a hacer la diferencia.
-                  El refugio es administrado por la municipalidad, que se encarga de
+                  El centro es administrado por la municipalidad, que se encarga de
                   los rescates, la atención veterinaria y los procesos de adopción.
                   Nosotros nos enfocamos en lo que más necesitan los perros en su día
                   a día: compañía, ejercicio, higiene y cariño.

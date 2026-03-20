@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Pasea perros, ayuda en su cuidado y forma parte de nuestro equipo.",
   openGraph: {
-    title: "Voluntariado | CRC Voluntarios",
+    title: "Voluntariado | Agrupación Voluntarios del rescate Canino ONG",
     description:
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Solo necesitas ser mayor de 18 años y amar a los perros.",
     url: "/voluntariado",
@@ -21,18 +21,18 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Voluntariado - CRC Voluntarios",
+  name: "Voluntariado - Agrupación Voluntarios del rescate Canino ONG",
   description:
-    "Programa de voluntariado para el cuidado de perros en refugio municipal de Santiago, Chile.",
+    "Programa de voluntariado para el cuidado de perros en el Centro de Rescate Canino de Ñuñoa, Santiago, Chile.",
   url: "https://crc-voluntarios.cl/voluntariado",
   isPartOf: {
     "@type": "WebSite",
-    name: "CRC Voluntarios",
+    name: "Agrupación Voluntarios del rescate Canino ONG",
     url: "https://crc-voluntarios.cl",
   },
   about: {
     "@type": "VolunteerAction",
-    name: "Voluntariado CRC",
+    name: "Voluntariado Agrupación Voluntarios del rescate Canino ONG",
     description:
       "Actividades de voluntariado incluyen paseos, juegos, limpieza y baño de perros en el refugio.",
     location: {

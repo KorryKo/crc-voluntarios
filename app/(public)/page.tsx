@@ -7,11 +7,11 @@ import { getDogs } from "@/lib/dogs";
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Adopta un Perro | CRC Voluntarios",
+  title: "Adopta un Perro | Agrupación Voluntarios del rescate Canino ONG",
   description:
     "Conoce a los perros disponibles para adopción en nuestro refugio en Santiago, Chile. Encuentra a tu nuevo compañero y dale un hogar.",
   openGraph: {
-    title: "Adopta un Perro | CRC Voluntarios",
+    title: "Adopta un Perro | Agrupación Voluntarios del rescate Canino ONG",
     description:
       "Conoce a los perros disponibles para adopción en nuestro refugio en Santiago, Chile.",
     url: "/",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "NGO",
-  name: "CRC Voluntarios",
+  name: "Agrupación Voluntarios del rescate Canino ONG",
   description:
     "Grupo de voluntarios dedicados al rescate y adopción de perros en Santiago, Chile.",
   url: "https://crc-voluntarios.cl",
@@ -45,9 +45,8 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection
-        title="Nuestros Perros"
-        subtitle="Conoce a los perros que buscan un hogar. Adopta, ven a visitarnos o comparte."
-
+        title="Dale un hogar a quien más lo necesita"
+        subtitle="Somos voluntarios que trabajamos en el Centro de Rescate Canino de Ñuñoa cuidando perros abandonados. Conócelos y cambia una vida — la de ellos y la tuya."
         cta={
           <a
             href="https://wa.me/56987997244?text=Hola%2C%20estoy%20interesado%20en%20adoptar%20un%20perro.%20%C2%BFCu%C3%A1ndo%20y%20c%C3%B3mo%20puedo%20visitarlos%3F"

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Instagram, Phone, MapPin } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Nuestros Perros" },
+  { href: "/", label: "Inicio" },
   { href: "/voluntariado", label: "Voluntariado" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
 ];
@@ -14,10 +14,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* About */}
           <div>
-            <h3 className="text-lg font-semibold">CRC Voluntarios</h3>
+            <h3 className="text-lg font-semibold">Agrupación Voluntarios del rescate Canino ONG</h3>
             <p className="mt-2 text-sm text-white/80">
               Grupo de voluntarios dedicados al cuidado y adopción de perros en
-              Santiago, Chile.
+              el Centro de Rescate Canino de Ñuñoa, Santiago, Chile.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 border-t border-white/20 pt-8 text-center text-sm text-white/60">
           <p>
-            © {new Date().getFullYear()} CRC Voluntarios. Todos los derechos
+            © {new Date().getFullYear()} Agrupación Voluntarios del rescate Canino ONG. Todos los derechos
             reservados.
           </p>
         </div>

@@ -12,8 +12,8 @@ const siteUrl = "https://crc-voluntarios.cl"; // Actualizar con URL real
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "CRC Voluntarios | Refugio de Perros en Santiago, Chile",
-    template: "%s | CRC Voluntarios",
+    default: "Agrupación Voluntarios del rescate Canino ONG | Refugio de Perros en Santiago, Chile",
+    template: "%s | Agrupación Voluntarios del rescate Canino ONG",
   },
   description:
     "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Ayuda a perros abandonados, participa en adopciones y forma parte de nuestra comunidad de voluntarios.",
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     "ayudar perros abandonados",
     "adopción responsable perros",
     "rescate animal Santiago",
-    "CRC voluntarios",
+    "Agrupación Voluntarios del rescate Canino ONG",
   ],
-  authors: [{ name: "CRC Voluntarios" }],
-  creator: "CRC Voluntarios",
+  authors: [{ name: "Agrupación Voluntarios del rescate Canino ONG" }],
+  creator: "Agrupación Voluntarios del rescate Canino ONG",
   openGraph: {
     type: "website",
     locale: "es_CL",
     url: siteUrl,
-    siteName: "CRC Voluntarios",
-    title: "CRC Voluntarios | Refugio de Perros en Santiago, Chile",
+    siteName: "Agrupación Voluntarios del rescate Canino ONG",
+    title: "Agrupación Voluntarios del rescate Canino ONG | Refugio de Perros en Santiago, Chile",
     description:
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Ayuda a perros abandonados y forma parte de nuestra comunidad.",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/crc-logo-preview.png",
         width: 1200,
         height: 630,
-        alt: "CRC Voluntarios - Refugio de Perros en Santiago, Chile",
+        alt: "Agrupación Voluntarios del rescate Canino ONG - Refugio de Perros en Santiago, Chile",
       },
     ],
   },
