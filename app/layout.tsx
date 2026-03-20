@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ORG_NAME, SITE_URL } from "@/lib/constants";
 
 const nunitoSans = localFont({
   src: "./fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf",
   display: "swap",
 });
 
-const siteUrl = "https://crc-voluntarios.cl"; // Actualizar con URL real
+const siteUrl = SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Agrupación Voluntarios del rescate Canino ONG | Refugio de Perros en Santiago, Chile",
-    template: "%s | Agrupación Voluntarios del rescate Canino ONG",
+    default: `${ORG_NAME} | Refugio de Perros en Santiago, Chile`,
+    template: `%s | ${ORG_NAME}`,
   },
   description:
     "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Ayuda a perros abandonados, participa en adopciones y forma parte de nuestra comunidad de voluntarios.",
@@ -25,16 +26,16 @@ export const metadata: Metadata = {
     "ayudar perros abandonados",
     "adopción responsable perros",
     "rescate animal Santiago",
-    "Agrupación Voluntarios del rescate Canino ONG",
+    ORG_NAME,
   ],
-  authors: [{ name: "Agrupación Voluntarios del rescate Canino ONG" }],
-  creator: "Agrupación Voluntarios del rescate Canino ONG",
+  authors: [{ name: ORG_NAME }],
+  creator: ORG_NAME,
   openGraph: {
     type: "website",
     locale: "es_CL",
     url: siteUrl,
-    siteName: "Agrupación Voluntarios del rescate Canino ONG",
-    title: "Agrupación Voluntarios del rescate Canino ONG | Refugio de Perros en Santiago, Chile",
+    siteName: ORG_NAME,
+    title: `${ORG_NAME} | Refugio de Perros en Santiago, Chile`,
     description:
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Ayuda a perros abandonados y forma parte de nuestra comunidad.",
     images: [
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
         url: "/crc-logo-preview.png",
         width: 1200,
         height: 630,
-        alt: "Agrupación Voluntarios del rescate Canino ONG - Refugio de Perros en Santiago, Chile",
+        alt: `${ORG_NAME} - Refugio de Perros en Santiago, Chile`,
       },
     ],
   },

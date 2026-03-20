@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import { Heart, Shield, Footprints, PawPrint } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import { getVolunteerPhotos } from "@/lib/volunteers";
+import { ORG_NAME, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const revalidate = 0;
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Somos un grupo de voluntarios que trabaja en el Centro de Rescate Canino de Ñuñoa para mejorar la calidad de vida de los perros abandonados y maltratados.",
   openGraph: {
-    title: "Sobre Nosotros | Agrupación Voluntarios del rescate Canino ONG",
+    title: `Sobre Nosotros | ${ORG_NAME}`,
     description:
       "Conoce nuestra historia de más de 10 años ayudando a perros abandonados en Santiago, Chile.",
     url: "/sobre-nosotros",
@@ -25,14 +26,14 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Sobre Nosotros - Agrupación Voluntarios del rescate Canino ONG",
+  name: `Sobre Nosotros - ${ORG_NAME}`,
   description:
     "Grupo de voluntarios dedicados al bienestar de perros en el Centro de Rescate Canino de Ñuñoa, Santiago, Chile.",
-  url: "https://crc-voluntarios.cl/sobre-nosotros",
+  url: `${SITE_URL}/sobre-nosotros`,
   isPartOf: {
     "@type": "WebSite",
-    name: "Agrupación Voluntarios del rescate Canino ONG",
-    url: "https://crc-voluntarios.cl",
+    name: ORG_NAME,
+    url: SITE_URL,
   },
 };
 
@@ -81,7 +82,7 @@ export default async function SobreNosotros() {
         subtitle="Más de 10 años dedicados al bienestar de los perros del refugio."
         cta={
           <a
-            href="https://wa.me/56987997244"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-full bg-white px-8 py-4 text-base font-bold text-secondary-700 shadow-xl transition hover:bg-secondary-50"
@@ -98,7 +99,7 @@ export default async function SobreNosotros() {
             <div className="shrink-0">
               <Image
                 src="/logo-crc.png"
-                alt="Logo Agrupación Voluntarios del rescate Canino ONG"
+                alt={`Logo ${ORG_NAME}`}
                 width={280}
                 height={280}
                 className="rounded-full"
@@ -110,7 +111,7 @@ export default async function SobreNosotros() {
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
                 <p>
-                  Agrupación Voluntarios del rescate Canino ONG nació hace más de 10 años, cuando un pequeño
+                  {ORG_NAME} nació hace más de 10 años, cuando un pequeño
                   grupo de personas decidió que no podía quedarse de brazos cruzados
                   ante la realidad de los perros abandonados y maltratados en
                   Santiago. Lo que comenzó como visitas esporádicas al Centro de

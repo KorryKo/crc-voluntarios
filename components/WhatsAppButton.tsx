@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { MessageCircle } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
@@ -16,7 +17,7 @@ export default function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/56987997244"
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Enviar mensaje por WhatsApp"

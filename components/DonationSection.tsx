@@ -1,4 +1,5 @@
 import InfoCard from "@/components/InfoCard";
+import { getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 const donations = [
   "Toallas en buen estado",
@@ -39,7 +40,7 @@ export default function DonationSection() {
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-text-secondary">
           Para coordinar tu donación, escríbenos por{" "}
           <a
-            href="https://wa.me/56987997244?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20una%20donaci%C3%B3n.%20%C2%BFC%C3%B3mo%20puedo%20hacerles%20llegar%20los%20materiales%3F"
+            href={getWhatsAppUrl(WA_MESSAGES.donation)}
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-secondary-500 underline hover:text-secondary-600"

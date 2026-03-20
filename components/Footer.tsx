@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { Instagram, Phone, MapPin } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/voluntariado", label: "Voluntariado" },
-  { href: "/sobre-nosotros", label: "Sobre Nosotros" },
-];
+import { NAV_LINKS, ORG_NAME, INSTAGRAM_URL, INSTAGRAM_HANDLE, WHATSAPP_PHONE_FORMATTED, LOCATION } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -14,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* About */}
           <div>
-            <h3 className="text-lg font-semibold">Agrupación Voluntarios del rescate Canino ONG</h3>
+            <h3 className="text-lg font-semibold">{ORG_NAME}</h3>
             <p className="mt-2 text-sm text-white/80">
               Grupo de voluntarios dedicados al cuidado y adopción de perros en
               el Centro de Rescate Canino de Ñuñoa, Santiago, Chile.
@@ -25,7 +20,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold">Enlaces</h3>
             <ul className="mt-2 space-y-2 text-sm">
-              {navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -43,29 +38,29 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Contacto</h3>
             <div className="mt-2 space-y-2">
               <a
-                href="https://instagram.com/adopcionescrc"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-white"
               >
                 <Instagram size={20} />
-                <span>@adopcionescrc</span>
+                <span>{INSTAGRAM_HANDLE}</span>
               </a>
               <a
-                href="tel:+56987997244"
+                href={`tel:${WHATSAPP_PHONE_FORMATTED.replace(/\s/g, "")}`}
                 className="flex items-center gap-2 text-white/80 transition-colors hover:text-white"
               >
                 <Phone size={20} />
-                <span>+56 9 8799 7244</span>
+                <span>{WHATSAPP_PHONE_FORMATTED}</span>
               </a>
               <a
-                href="https://maps.google.com/?q=Av.+Vicuña+Mackenna+1590,+Ñuñoa,+Región+Metropolitana"
+                href={LOCATION.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-2 text-white/80 transition-colors hover:text-white"
               >
                 <MapPin size={20} className="shrink-0 mt-0.5" />
-                <span>Av. Vicuña Mackenna 1590, Ñuñoa, Región Metropolitana</span>
+                <span>{LOCATION.address}</span>
               </a>
             </div>
           </div>
@@ -74,7 +69,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 border-t border-white/20 pt-8 text-center text-sm text-white/60">
           <p>
-            © {new Date().getFullYear()} Agrupación Voluntarios del rescate Canino ONG. Todos los derechos
+            © {new Date().getFullYear()} {ORG_NAME}. Todos los derechos
             reservados.
           </p>
         </div>

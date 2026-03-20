@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Mars, Venus, Ruler, LucideIcon } from "lucide-react";
 import { Dog, EstadoPerro, Sexo, Tamaño } from "@/types";
 import { calcularEdad } from "@/lib/utils";
+import { getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 const estadoConfig: Record<
   EstadoPerro,
@@ -72,7 +73,7 @@ export default function DogCard({ dog }: { dog: Dog }) {
         </p>
         <div className="mt-auto pt-4">
           <a
-            href={`https://wa.me/56987997244?text=${encodeURIComponent(`Hola! Vi a ${dog.nombre} en la página de Agrupación Voluntarios del rescate Canino ONG y me gustaría saber más sobre este perrito para una posible adopción.`)}`}
+            href={getWhatsAppUrl(WA_MESSAGES.dogInquiry(dog.nombre))}
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full rounded-full border-2 border-secondary-500 py-2 text-center text-sm font-semibold text-secondary-500 transition hover:bg-secondary-500 hover:text-white"

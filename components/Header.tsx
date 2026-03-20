@@ -5,12 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, Instagram } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/voluntariado", label: "Voluntariado" },
-  { href: "/sobre-nosotros", label: "Sobre Nosotros" },
-];
+import { NAV_LINKS, INSTAGRAM_URL, ORG_NAME } from "@/lib/constants";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +32,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo-crc.png"
-              alt="Logo Agrupación Voluntarios del rescate Canino ONG"
+              alt={`Logo ${ORG_NAME}`}
               width={40}
               height={40}
               className={`rounded-full transition-all duration-300 ${scrolled ? "w-10 h-10" : "w-10 h-10 lg:w-12 lg:h-12"}`}
@@ -55,7 +50,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
-              {navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -75,7 +70,7 @@ export default function Header() {
               ))}
               <li>
                 <a
-                  href="https://www.instagram.com/adopcionescrc"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Síguenos en Instagram"
@@ -115,7 +110,7 @@ export default function Header() {
         >
           <nav className={`pb-4 rounded-b-xl ${scrolled ? "" : "bg-black/20 backdrop-blur-md px-4 rounded-xl"}`}>
             <ul className="flex flex-col gap-2">
-              {navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -136,7 +131,7 @@ export default function Header() {
               ))}
               <li>
                 <a
-                  href="https://www.instagram.com/adopcionescrc"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 py-2 transition-colors ${

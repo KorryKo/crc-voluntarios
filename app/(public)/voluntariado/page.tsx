@@ -3,13 +3,14 @@ import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, ClipboardList, GraduationCap, PartyPopper, UserCheck, Clock, Users, HandHeart, ShieldCheck } from "lucide-react";
 import InfoCard from "@/components/InfoCard";
+import { ORG_NAME, SITE_URL, getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Voluntariado",
   description:
     "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Pasea perros, ayuda en su cuidado y forma parte de nuestro equipo.",
   openGraph: {
-    title: "Voluntariado | Agrupación Voluntarios del rescate Canino ONG",
+    title: `Voluntariado | ${ORG_NAME}`,
     description:
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Solo necesitas ser mayor de 18 años y amar a los perros.",
     url: "/voluntariado",
@@ -22,18 +23,18 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Voluntariado - Agrupación Voluntarios del rescate Canino ONG",
+  name: `Voluntariado - ${ORG_NAME}`,
   description:
     "Programa de voluntariado para el cuidado de perros en el Centro de Rescate Canino de Ñuñoa, Santiago, Chile.",
-  url: "https://crc-voluntarios.cl/voluntariado",
+  url: `${SITE_URL}/voluntariado`,
   isPartOf: {
     "@type": "WebSite",
-    name: "Agrupación Voluntarios del rescate Canino ONG",
-    url: "https://crc-voluntarios.cl",
+    name: ORG_NAME,
+    url: SITE_URL,
   },
   about: {
     "@type": "VolunteerAction",
-    name: "Voluntariado Agrupación Voluntarios del rescate Canino ONG",
+    name: `Voluntariado ${ORG_NAME}`,
     description:
       "Actividades de voluntariado incluyen paseos, juegos, limpieza y baño de perros en el refugio.",
     location: {
@@ -120,7 +121,7 @@ export default function Voluntariado() {
 
         cta={
           <a
-            href="https://wa.me/56987997244?text=Hola%2C%20me%20gustar%C3%ADa%20ser%20voluntario.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20participar%3F"
+            href={getWhatsAppUrl(WA_MESSAGES.volunteer)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-full bg-white px-8 py-4 text-base font-bold text-secondary-700 shadow-xl transition hover:bg-secondary-50"

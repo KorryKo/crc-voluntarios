@@ -4,15 +4,16 @@ import DogsSection from "@/components/DogsSection";
 import AdoptionRules from "@/components/AdoptionRules";
 import DonationSection from "@/components/DonationSection";
 import { getDogs } from "@/lib/dogs";
+import { ORG_NAME, SITE_URL, INSTAGRAM_URL, getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Adopta un Perro | Agrupación Voluntarios del rescate Canino ONG",
+  title: `Adopta un Perro | ${ORG_NAME}`,
   description:
     "Conoce a los perros disponibles para adopción en nuestro refugio en Santiago, Chile. Encuentra a tu nuevo compañero y dale un hogar.",
   openGraph: {
-    title: "Adopta un Perro | Agrupación Voluntarios del rescate Canino ONG",
+    title: `Adopta un Perro | ${ORG_NAME}`,
     description:
       "Conoce a los perros disponibles para adopción en nuestro refugio en Santiago, Chile.",
     url: "/",
@@ -25,11 +26,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "NGO",
-  name: "Agrupación Voluntarios del rescate Canino ONG",
+  name: ORG_NAME,
   description:
     "Grupo de voluntarios dedicados al rescate y adopción de perros en Santiago, Chile.",
-  url: "https://crc-voluntarios.cl",
-  sameAs: ["https://www.instagram.com/adopcionescrc"],
+  url: SITE_URL,
+  sameAs: [INSTAGRAM_URL],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Santiago",
@@ -50,7 +51,7 @@ export default async function Home() {
         subtitle="Somos voluntarios que trabajamos en el Centro de Rescate Canino de Ñuñoa cuidando perros abandonados. Conócelos y cambia una vida — la de ellos y la tuya."
         cta={
           <a
-            href="https://wa.me/56987997244?text=Hola%2C%20estoy%20interesado%20en%20adoptar%20un%20perro.%20%C2%BFCu%C3%A1ndo%20y%20c%C3%B3mo%20puedo%20visitarlos%3F"
+            href={getWhatsAppUrl(WA_MESSAGES.adoption)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-full bg-white px-8 py-4 text-base font-bold text-secondary-700 shadow-xl transition hover:bg-secondary-50"
