@@ -1,6 +1,4 @@
 import {
-  UserCheck,
-  Home,
   ShieldCheck,
   PawPrint,
   Video,
@@ -8,6 +6,7 @@ import {
   FileSignature,
   Heart,
 } from "lucide-react";
+import InfoCard from "@/components/InfoCard";
 
 const requirements = [
   "Ser mayor de edad.",
@@ -62,7 +61,7 @@ export default function AdoptionRules() {
         </p>
 
         {/* Requisitos */}
-        <div className="mx-auto mt-12 max-w-2xl rounded-2xl bg-white p-8 shadow-md ring-1 ring-black/5">
+        <InfoCard className="mt-12">
           <h3 className="flex items-center gap-2 text-xl font-bold text-text-primary">
             <ShieldCheck className="h-6 w-6 text-secondary-500" />
             Requisitos para adoptar
@@ -77,7 +76,7 @@ export default function AdoptionRules() {
               </li>
             ))}
           </ul>
-        </div>
+        </InfoCard>
 
         {/* Pasos */}
         <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">

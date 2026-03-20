@@ -1,3 +1,5 @@
+import InfoCard from "@/components/InfoCard";
+
 const donations = [
   "Toallas en buen estado",
   "Polar para camitas",
@@ -21,7 +23,7 @@ export default function DonationSection() {
           posible. Si quieres ayudar, estos son algunos de los materiales que
           siempre necesitamos:
         </p>
-        <div className="mx-auto mt-10 max-w-2xl rounded-2xl bg-white p-8 shadow-md ring-1 ring-black/5">
+        <InfoCard className="mt-10">
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {donations.map((item, index) => (
               <li
@@ -33,7 +35,7 @@ export default function DonationSection() {
               </li>
             ))}
           </ul>
-        </div>
+        </InfoCard>
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-text-secondary">
           Para coordinar tu donación, escríbenos por{" "}
           <a

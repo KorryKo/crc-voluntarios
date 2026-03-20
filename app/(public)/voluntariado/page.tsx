@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, ClipboardList, GraduationCap, PartyPopper, UserCheck, Clock, Users, HandHeart, ShieldCheck } from "lucide-react";
+import InfoCard from "@/components/InfoCard";
 
 export const metadata: Metadata = {
   title: "Voluntariado",
@@ -174,7 +175,7 @@ export default function Voluntariado() {
           <h2 className="text-center text-3xl font-bold text-text-primary">
             Requisitos
           </h2>
-          <div className="mt-10 rounded-2xl bg-white p-8 shadow-md ring-1 ring-black/5">
+          <InfoCard className="mt-10">
             <ul className="space-y-4">
               {[
                 { icon: UserCheck, text: "Ser mayor de edad." },
@@ -189,7 +190,7 @@ export default function Voluntariado() {
                 </li>
               ))}
             </ul>
-          </div>
+          </InfoCard>
         </div>
       </section>
 
