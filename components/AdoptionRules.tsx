@@ -7,6 +7,7 @@ import {
   Heart,
 } from "lucide-react";
 import InfoCard from "@/components/InfoCard";
+import StepsGrid from "@/components/StepsGrid";
 
 const requirements = [
   "Ser mayor de edad.",
@@ -79,24 +80,7 @@ export default function AdoptionRules() {
         </InfoCard>
 
         {/* Pasos */}
-        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
-          {steps.map((step, index) => (
-            <div key={index} className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary-100">
-                <step.icon className="h-7 w-7 text-secondary-600" />
-              </div>
-              <p className="mt-2 text-sm font-semibold text-secondary-600">
-                Paso {index + 1}
-              </p>
-              <h3 className="mt-2 text-lg font-bold text-text-primary">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm text-text-secondary">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        <StepsGrid steps={steps} columns={5} />
       </div>
     </section>
   );

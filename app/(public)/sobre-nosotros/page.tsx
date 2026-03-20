@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import { Heart, Shield, Footprints, PawPrint } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import { getVolunteerPhotos } from "@/lib/volunteers";
+import StepsGrid from "@/components/StepsGrid";
 import { ORG_NAME, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 
 export const revalidate = 0;
@@ -152,21 +153,7 @@ export default async function SobreNosotros() {
             Como todo ser sintiente y gregario, los canes necesitan salud física
             y mental en un entorno cuidado y respetuoso de su especie.
           </p>
-          <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {queHacemos.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary-100">
-                  <item.icon className="h-7 w-7 text-secondary-600" />
-                </div>
-                <h3 className="mt-4 text-lg font-bold text-text-primary">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-text-secondary">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <StepsGrid steps={queHacemos} columns={4} numbered={false} />
         </div>
       </section>
 

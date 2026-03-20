@@ -3,6 +3,7 @@ import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, ClipboardList, GraduationCap, PartyPopper, UserCheck, Clock, Users, HandHeart, ShieldCheck } from "lucide-react";
 import InfoCard from "@/components/InfoCard";
+import StepsGrid from "@/components/StepsGrid";
 import { ORG_NAME, SITE_URL, getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -140,21 +141,7 @@ export default function Voluntariado() {
             Nuestras actividades diarias están enfocadas en el bienestar de los
             perros del refugio.
           </p>
-          <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
-            {activities.map((activity, index) => (
-              <div key={index} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary-100">
-                  <activity.icon className="h-7 w-7 text-secondary-600" />
-                </div>
-                <h3 className="mt-4 text-lg font-bold text-text-primary">
-                  {activity.title}
-                </h3>
-                <p className="mt-2 text-sm text-text-secondary">
-                  {activity.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <StepsGrid steps={activities} columns={5} numbered={false} />
         </div>
       </section>
 
@@ -203,24 +190,7 @@ export default function Voluntariado() {
           <p className="mx-auto mt-3 max-w-2xl text-center text-text-secondary">
             Sigue estos pasos para unirte a nuestro equipo.
           </p>
-          <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary-100">
-                  <step.icon className="h-7 w-7 text-secondary-600" />
-                </div>
-                <p className="mt-2 text-sm font-semibold text-secondary-600">
-                  Paso {index + 1}
-                </p>
-                <h3 className="mt-2 text-lg font-bold text-text-primary">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm text-text-secondary">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <StepsGrid steps={steps} columns={4} />
         </div>
       </section>
     </div>
