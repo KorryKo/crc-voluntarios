@@ -4,7 +4,7 @@ import DogsSection from "@/components/DogsSection";
 import AdoptionRules from "@/components/AdoptionRules";
 import DonationSection from "@/components/DonationSection";
 import { getDogs } from "@/lib/dogs";
-import { ORG_NAME, SITE_URL, INSTAGRAM_URL, getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
+import { ORG_NAME, SITE_URL, INSTAGRAM_URL } from "@/lib/constants";
 
 export const revalidate = 0;
 
@@ -51,16 +51,14 @@ export default async function Home() {
         subtitle="Somos voluntarios que trabajamos en el Centro de Rescate Canino de Ñuñoa cuidando perros abandonados. Conócelos y cambia una vida — la de ellos y la tuya."
         cta={
           <a
-            href={getWhatsAppUrl(WA_MESSAGES.adoption)}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#como-adoptar"
             className="inline-block rounded-full bg-white px-8 py-4 text-base font-bold text-secondary-700 shadow-xl transition hover:bg-secondary-50"
           >
             Quiero adoptar
           </a>
         }
       />
-      <div className="mx-auto max-w-7xl px-6 pt-24 pb-24 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16">
         <h2 className="mb-3 text-center text-3xl font-bold text-text-primary">
           Nuestros Perros
         </h2>

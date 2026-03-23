@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Primary - White/Neutral */
   --color-primary-50: #FFFFFF;

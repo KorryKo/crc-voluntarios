@@ -94,7 +94,7 @@ export default async function SobreNosotros() {
       />
 
       {/* Nuestra historia */}
-      <section className="pt-24 pb-24">
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <div className="flex flex-col items-center gap-12 md:flex-row md:items-center md:gap-16">
             <div className="shrink-0">

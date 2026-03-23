@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, ClipboardList, GraduationCap, PartyPopper, UserCheck, Clock, Users, HandHeart, ShieldCheck } from "lucide-react";
 import InfoCard from "@/components/InfoCard";
 import StepsGrid from "@/components/StepsGrid";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 import { ORG_NAME, SITE_URL, getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -122,9 +123,7 @@ export default function Voluntariado() {
 
         cta={
           <a
-            href={getWhatsAppUrl(WA_MESSAGES.volunteer)}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#requisitos-voluntario"
             className="inline-block rounded-full bg-white px-8 py-4 text-base font-bold text-secondary-700 shadow-xl transition hover:bg-secondary-50"
           >
             Quiero ser voluntario
@@ -132,7 +131,7 @@ export default function Voluntariado() {
         }
       />
 
-      <section className="bg-bg-warm pt-24 pb-24">
+      <section className="bg-bg-warm py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
           <h2 className="text-center text-3xl font-bold text-text-primary">
             ¿Qué hacemos como voluntarios?
@@ -145,7 +144,7 @@ export default function Voluntariado() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-16">
+      <section className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16">
         <div className="overflow-hidden rounded-2xl">
           <Image
             src="/voluntarios.jpg"
@@ -158,7 +157,7 @@ export default function Voluntariado() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section id="requisitos-voluntario" className="scroll-mt-24 py-24">
         <div className="mx-auto max-w-3xl px-6 sm:px-10">
           <h2 className="text-center text-3xl font-bold text-text-primary">
             Requisitos
@@ -179,6 +178,13 @@ export default function Voluntariado() {
               ))}
             </ul>
           </InfoCard>
+
+          <WhatsAppCTA
+            className="mt-12"
+            description="Escríbenos por WhatsApp para coordinar tu primera visita al Centro de Rescate Canino."
+            buttonLabel="Quiero ser voluntario"
+            href={getWhatsAppUrl(WA_MESSAGES.volunteer)}
+          />
         </div>
       </section>
 

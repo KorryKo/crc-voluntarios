@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import InfoCard from "@/components/InfoCard";
 import StepsGrid from "@/components/StepsGrid";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
+import { getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 const requirements = [
   "Ser mayor de edad.",
@@ -52,7 +54,7 @@ const steps = [
 
 export default function AdoptionRules() {
   return (
-    <section className="bg-bg-warm py-30">
+    <section id="como-adoptar" className="bg-bg-warm py-24 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <h2 className="text-center text-3xl font-bold text-text-primary">
           ¿Cómo adoptar?
@@ -81,6 +83,14 @@ export default function AdoptionRules() {
 
         {/* Pasos */}
         <StepsGrid steps={steps} columns={5} />
+
+        {/* CTA */}
+        <WhatsAppCTA
+          className="mt-16"
+          description="Escríbenos por WhatsApp para coordinar tu visita al Centro de Rescate Canino."
+          buttonLabel="Quiero adoptar"
+          href={getWhatsAppUrl(WA_MESSAGES.adoption)}
+        />
       </div>
     </section>
   );
