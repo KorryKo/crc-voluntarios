@@ -47,7 +47,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection
-        title="Dale un hogar a quien más lo necesita"
+        title="Centro de rescate canino de Ñuñoa"
         subtitle="Somos voluntarios que trabajamos en el Centro de Rescate Canino de Ñuñoa cuidando perros abandonados. Conócelos y cambia una vida — la de ellos y la tuya."
         cta={
           <a
