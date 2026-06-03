@@ -54,6 +54,9 @@ export default function DogsTable({ dogs }: { dogs: Dog[] }) {
             <th className="hidden px-4 py-3 font-medium lg:table-cell">
               Nacimiento
             </th>
+            <th className="hidden px-4 py-3 font-medium lg:table-cell">
+              Llegada
+            </th>
             <th className="px-4 py-3 font-medium">Acciones</th>
           </tr>
         </thead>
@@ -85,6 +88,9 @@ export default function DogsTable({ dogs }: { dogs: Dog[] }) {
               </td>
               <td className="hidden px-4 py-3 text-(--color-text-secondary) lg:table-cell">
                 {formatDate(dog.fechaNacimiento)}
+              </td>
+              <td className="hidden px-4 py-3 text-(--color-text-secondary) lg:table-cell">
+                {formatDate(dog.fechaLlegada)}
               </td>
               <td className="px-4 py-3">
                 <div className="flex items-center gap-2">
