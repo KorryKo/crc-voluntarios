@@ -56,6 +56,8 @@ function formatTiempoTranscurrido(fecha: Date): string {
   }
 
   if (años >= 1) {
+    // Round to the nearest year (e.g. 1 año 6 meses → "2 años").
+    if (meses >= 6) años++;
     return años === 1 ? "1 año" : `${años} años`;
   } else {
     return meses <= 1 ? "1 mes" : `${meses} meses`;

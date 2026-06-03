@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mars, Venus, Ruler, Home, LucideIcon } from "lucide-react";
+import { Mars, Venus, Ruler, Home, Cake, LucideIcon } from "lucide-react";
 import { Dog, EstadoPerro, Sexo, Tamaño } from "@/types";
 import { calcularEdad, tiempoEnRefugio } from "@/lib/utils";
 import { getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
@@ -62,7 +62,10 @@ export default function DogCard({ dog }: { dog: Dog }) {
           </span>
         </div>
         <p className="mt-1 flex items-center gap-3 text-sm text-text-secondary">
-          <span>{calcularEdad(dog.fechaNacimiento)}</span>
+          <span className="flex items-center gap-1" title="Edad">
+            <Cake size={14} />
+            {calcularEdad(dog.fechaNacimiento)}
+          </span>
           <span className="flex items-center gap-1">
             <Ruler size={14} />
             {tamañoLabels[dog.tamaño]}
