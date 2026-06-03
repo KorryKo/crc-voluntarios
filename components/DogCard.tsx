@@ -80,16 +80,18 @@ export default function DogCard({ dog }: { dog: Dog }) {
         <p className="mt-2 text-sm text-text-secondary">
           {dog.descripcion}
         </p>
-        <div className="mt-auto pt-4">
-          <a
-            href={getWhatsAppUrl(WA_MESSAGES.dogInquiry(dog.nombre))}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full rounded-full border-2 border-secondary-500 py-2 text-center text-sm font-semibold text-secondary-500 transition hover:bg-secondary-500 hover:text-white"
-          >
-            Preguntar por {dog.nombre}
-          </a>
-        </div>
+        {dog.estado === "disponible" && (
+          <div className="mt-auto pt-4">
+            <a
+              href={getWhatsAppUrl(WA_MESSAGES.dogInquiry(dog.nombre))}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full rounded-full border-2 border-secondary-500 py-2 text-center text-sm font-semibold text-secondary-500 transition hover:bg-secondary-500 hover:text-white"
+            >
+              Preguntar por {dog.nombre}
+            </a>
+          </div>
+        )}
       </div>
     </article>
   );
