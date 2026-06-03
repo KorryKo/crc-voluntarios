@@ -1,4 +1,5 @@
 import { supabase } from "./supabase";
+import { parseFechaCalendario } from "./utils";
 import { Dog } from "@/types";
 
 export async function getDogs(): Promise<Dog[]> {
@@ -20,8 +21,8 @@ export async function getDogs(): Promise<Dog[]> {
     return {
       id: dog.id,
       nombre: dog.nombre,
-      fechaNacimiento: new Date(dog.fecha_nacimiento),
-      fechaLlegada: new Date(dog.fecha_llegada),
+      fechaNacimiento: parseFechaCalendario(dog.fecha_nacimiento),
+      fechaLlegada: parseFechaCalendario(dog.fecha_llegada),
       sexo: dog.sexo,
       tamaño: dog.tamano,
       foto,

@@ -5,7 +5,12 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Mars, Venus, Ruler, Home } from "lucide-react";
 import { createDog, updateDog } from "@/app/admin/actions";
-import { calcularEdad, tiempoEnRefugio } from "@/lib/utils";
+import {
+  calcularEdad,
+  formatFechaInput,
+  parseFechaCalendario,
+  tiempoEnRefugio,
+} from "@/lib/utils";
 import type { Dog, EstadoPerro, Sexo, Tamaño } from "@/types";
 
 const estadoConfig: Record<EstadoPerro, { label: string; bg: string; text: string }> = {
@@ -32,10 +37,10 @@ export default function DogForm({ dog }: { dog?: Dog }) {
 
   const [nombre, setNombre] = useState(dog?.nombre ?? "");
   const [fechaNacimiento, setFechaNacimiento] = useState(
-    dog ? dog.fechaNacimiento.toISOString().split("T")[0] : ""
+    dog ? formatFechaInput(dog.fechaNacimiento) : ""
   );
   const [fechaLlegada, setFechaLlegada] = useState(
-    dog ? dog.fechaLlegada.toISOString().split("T")[0] : ""
+    dog ? formatFechaInput(dog.fechaLlegada) : ""
   );
   const [sexo, setSexo] = useState<Sexo | "">(dog?.sexo ?? "");
   const [tamano, setTamano] = useState<Tamaño | "">(dog?.tamaño ?? "");
@@ -74,10 +79,10 @@ export default function DogForm({ dog }: { dog?: Dog }) {
   const previewTamano = tamano || "mediano";
   const previewEstado = estado;
   const previewEdad = fechaNacimiento
-    ? calcularEdad(new Date(fechaNacimiento))
+    ? calcularEdad(parseFechaCalendario(fechaNacimiento))
     : "";
   const previewTiempoRefugio = fechaLlegada
-    ? tiempoEnRefugio(new Date(fechaLlegada))
+    ? tiempoEnRefugio(parseFechaCalendario(fechaLlegada))
     : "";
   const SexoIcon = sexoConfig[previewSexo].icon;
   const estadoCfg = estadoConfig[previewEstado];

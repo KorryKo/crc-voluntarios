@@ -4,15 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { Pencil, Trash2 } from "lucide-react";
 import { deleteDog } from "@/app/admin/actions";
+import { formatFechaCorta } from "@/lib/utils";
 import type { Dog } from "@/types";
-
-function formatDate(date: Date) {
-  return date.toLocaleDateString("es-CL", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
 
 export default function DogsTable({ dogs }: { dogs: Dog[] }) {
   const [deleting, setDeleting] = useState<number | null>(null);
@@ -87,10 +80,10 @@ export default function DogsTable({ dogs }: { dogs: Dog[] }) {
                 {dog.tamaño}
               </td>
               <td className="hidden px-4 py-3 text-(--color-text-secondary) lg:table-cell">
-                {formatDate(dog.fechaNacimiento)}
+                {formatFechaCorta(dog.fechaNacimiento)}
               </td>
               <td className="hidden px-4 py-3 text-(--color-text-secondary) lg:table-cell">
-                {formatDate(dog.fechaLlegada)}
+                {formatFechaCorta(dog.fechaLlegada)}
               </td>
               <td className="px-4 py-3">
                 <div className="flex items-center gap-2">
