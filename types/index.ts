@@ -8,6 +8,7 @@ export interface Dog {
   id: number;
   nombre: string;
   fechaNacimiento: Date;
+  fechaLlegada: Date;
   sexo: Sexo;
   tamaño: Tamaño;
   foto: string;

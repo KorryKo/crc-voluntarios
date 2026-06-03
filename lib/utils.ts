@@ -1,16 +1,16 @@
-export function calcularEdad(fechaNacimiento: Date): string {
+function formatTiempoTranscurrido(fecha: Date): string {
   const hoy = new Date();
-  const nacimiento = new Date(fechaNacimiento);
+  const desde = new Date(fecha);
 
-  let años = hoy.getFullYear() - nacimiento.getFullYear();
-  let meses = hoy.getMonth() - nacimiento.getMonth();
+  let años = hoy.getFullYear() - desde.getFullYear();
+  let meses = hoy.getMonth() - desde.getMonth();
 
-  if (meses < 0 || (meses === 0 && hoy.getDate() < nacimiento.getDate())) {
+  if (meses < 0 || (meses === 0 && hoy.getDate() < desde.getDate())) {
     años--;
     meses += 12;
   }
 
-  if (hoy.getDate() < nacimiento.getDate()) {
+  if (hoy.getDate() < desde.getDate()) {
     meses--;
   }
 
@@ -20,3 +20,6 @@ export function calcularEdad(fechaNacimiento: Date): string {
     return meses <= 1 ? "1 mes" : `${meses} meses`;
   }
 }
+
+export const calcularEdad = formatTiempoTranscurrido;
+export const tiempoEnRefugio = formatTiempoTranscurrido;

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Mars, Venus, Ruler, LucideIcon } from "lucide-react";
+import { Mars, Venus, Ruler, Home, LucideIcon } from "lucide-react";
 import { Dog, EstadoPerro, Sexo, Tamaño } from "@/types";
-import { calcularEdad } from "@/lib/utils";
+import { calcularEdad, tiempoEnRefugio } from "@/lib/utils";
 import { getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
 
 const estadoConfig: Record<
@@ -66,6 +66,10 @@ export default function DogCard({ dog }: { dog: Dog }) {
           <span className="flex items-center gap-1">
             <Ruler size={14} />
             {tamañoLabels[dog.tamaño]}
+          </span>
+          <span className="flex items-center gap-1" title="Tiempo en el refugio">
+            <Home size={14} />
+            {tiempoEnRefugio(dog.fechaLlegada)}
           </span>
         </p>
         <p className="mt-2 text-sm text-text-secondary">

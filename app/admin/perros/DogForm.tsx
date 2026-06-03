@@ -3,9 +3,9 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Mars, Venus, Ruler } from "lucide-react";
+import { Mars, Venus, Ruler, Home } from "lucide-react";
 import { createDog, updateDog } from "@/app/admin/actions";
-import { calcularEdad } from "@/lib/utils";
+import { calcularEdad, tiempoEnRefugio } from "@/lib/utils";
 import type { Dog, EstadoPerro, Sexo, Tamaño } from "@/types";
 
 const estadoConfig: Record<EstadoPerro, { label: string; bg: string; text: string }> = {
@@ -33,6 +33,9 @@ export default function DogForm({ dog }: { dog?: Dog }) {
   const [nombre, setNombre] = useState(dog?.nombre ?? "");
   const [fechaNacimiento, setFechaNacimiento] = useState(
     dog ? dog.fechaNacimiento.toISOString().split("T")[0] : ""
+  );
+  const [fechaLlegada, setFechaLlegada] = useState(
+    dog ? dog.fechaLlegada.toISOString().split("T")[0] : ""
   );
   const [sexo, setSexo] = useState<Sexo | "">(dog?.sexo ?? "");
   const [tamano, setTamano] = useState<Tamaño | "">(dog?.tamaño ?? "");
@@ -73,6 +76,9 @@ export default function DogForm({ dog }: { dog?: Dog }) {
   const previewEdad = fechaNacimiento
     ? calcularEdad(new Date(fechaNacimiento))
     : "";
+  const previewTiempoRefugio = fechaLlegada
+    ? tiempoEnRefugio(new Date(fechaLlegada))
+    : "";
   const SexoIcon = sexoConfig[previewSexo].icon;
   const estadoCfg = estadoConfig[previewEstado];
   const sexoCfg = sexoConfig[previewSexo];
@@ -111,6 +117,20 @@ export default function DogForm({ dog }: { dog?: Dog }) {
             required
             value={fechaNacimiento}
             onChange={(e) => setFechaNacimiento(e.target.value)}
+            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
+          />
+        </div>
+
+        <div>
+          <label className="mb-1 block text-sm font-medium text-(--color-text-primary)">
+            Fecha de llegada al refugio
+          </label>
+          <input
+            name="fecha_llegada"
+            type="date"
+            required
+            value={fechaLlegada}
+            onChange={(e) => setFechaLlegada(e.target.value)}
             className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-secondary-500 focus:ring-1 focus:ring-secondary-500"
           />
         </div>
@@ -261,6 +281,15 @@ export default function DogForm({ dog }: { dog?: Dog }) {
                 <span className="flex items-center gap-1">
                   <Ruler size={14} />
                   {tamañoLabels[previewTamano]}
+                </span>
+              )}
+              {previewTiempoRefugio && (
+                <span
+                  className="flex items-center gap-1"
+                  title="Tiempo en el refugio"
+                >
+                  <Home size={14} />
+                  {previewTiempoRefugio}
                 </span>
               )}
             </p>

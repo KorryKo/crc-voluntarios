@@ -18,6 +18,7 @@ export async function createDog(formData: FormData) {
   const { error } = await supabase.from("dogs").insert({
     nombre: formData.get("nombre") as string,
     fecha_nacimiento: formData.get("fecha_nacimiento") as string,
+    fecha_llegada: formData.get("fecha_llegada") as string,
     sexo: formData.get("sexo") as string,
     tamano: formData.get("tamano") as string,
     descripcion: formData.get("descripcion") as string,
@@ -53,6 +54,7 @@ export async function updateDog(id: number, formData: FormData) {
     .update({
       nombre: formData.get("nombre") as string,
       fecha_nacimiento: formData.get("fecha_nacimiento") as string,
+      fecha_llegada: formData.get("fecha_llegada") as string,
       sexo: formData.get("sexo") as string,
       tamano: formData.get("tamano") as string,
       descripcion: formData.get("descripcion") as string,
