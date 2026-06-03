@@ -11,7 +11,7 @@ export const INSTAGRAM_URL = "https://www.instagram.com/adopcionescrc";
 export const INSTAGRAM_HANDLE = "@adopcionescrc";
 
 // Site
-export const SITE_URL = "https://crc-voluntarios.cl";
+export const SITE_URL = "https://adoptaperroensantiago.cl";
 
 // Location
 export const LOCATION = {
