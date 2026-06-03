@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import { ORG_NAME, SITE_URL } from "@/lib/constants";
+
+const GA_ID = "G-BZJH52MNHL";
 
 const nunitoSans = localFont({
   src: "./fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf",
@@ -76,6 +79,19 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${nunitoSans.className} flex min-h-screen flex-col`}>
         {children}
+        {/* Google Analytics (GA4) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
