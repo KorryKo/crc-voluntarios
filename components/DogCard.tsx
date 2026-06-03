@@ -67,10 +67,12 @@ export default function DogCard({ dog }: { dog: Dog }) {
             <Ruler size={14} />
             {tamañoLabels[dog.tamaño]}
           </span>
-          <span className="flex items-center gap-1" title="Tiempo en el refugio">
-            <Home size={14} />
-            {tiempoEnRefugio(dog.fechaLlegada)}
-          </span>
+          {dog.estado === "disponible" && (
+            <span className="flex items-center gap-1" title="Tiempo en el refugio">
+              <Home size={14} />
+              {tiempoEnRefugio(dog.fechaLlegada)}
+            </span>
+          )}
         </p>
         <p className="mt-2 text-sm text-text-secondary">
           {dog.descripcion}

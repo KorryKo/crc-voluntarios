@@ -288,7 +288,7 @@ export default function DogForm({ dog }: { dog?: Dog }) {
                   {tamañoLabels[previewTamano]}
                 </span>
               )}
-              {previewTiempoRefugio && (
+              {previewTiempoRefugio && previewEstado === "disponible" && (
                 <span
                   className="flex items-center gap-1"
                   title="Tiempo en el refugio"
