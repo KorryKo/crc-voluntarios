@@ -5,7 +5,7 @@ import { Heart, Shield, Footprints, PawPrint } from "lucide-react";
 import GalleryCarousel from "@/components/GalleryCarousel";
 import { getVolunteerPhotos } from "@/lib/volunteers";
 import StepsGrid from "@/components/StepsGrid";
-import { ORG_NAME, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { ORG_NAME, SITE_URL, WHATSAPP_URL, OG_DEFAULTS } from "@/lib/constants";
 
 export const revalidate = 0;
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Somos un grupo de voluntarios que trabaja en el Centro de Rescate Canino de Ñuñoa para mejorar la calidad de vida de los perros abandonados y maltratados.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: `Sobre Nosotros | ${ORG_NAME}`,
     description:
       "Conoce nuestra historia de más de 10 años ayudando a perros abandonados en Santiago, Chile.",

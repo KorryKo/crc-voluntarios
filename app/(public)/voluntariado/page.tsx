@@ -5,13 +5,14 @@ import { Footprints, GamepadIcon, SprayCan, ShowerHead, Heart, MessageCircle, Cl
 import InfoCard from "@/components/InfoCard";
 import StepsGrid from "@/components/StepsGrid";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
-import { ORG_NAME, SITE_URL, getWhatsAppUrl, WA_MESSAGES } from "@/lib/constants";
+import { ORG_NAME, SITE_URL, getWhatsAppUrl, WA_MESSAGES, OG_DEFAULTS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Voluntariado",
   description:
     "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Pasea perros, ayuda en su cuidado y forma parte de nuestro equipo.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: `Voluntariado | ${ORG_NAME}`,
     description:
       "Únete como voluntario en nuestro refugio de perros en Santiago, Chile. Solo necesitas ser mayor de 18 años y amar a los perros.",

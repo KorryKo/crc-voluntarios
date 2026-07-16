@@ -4,16 +4,21 @@ import DogsSection from "@/components/DogsSection";
 import AdoptionRules from "@/components/AdoptionRules";
 import DonationSection from "@/components/DonationSection";
 import { getDogs } from "@/lib/dogs";
-import { ORG_NAME, SITE_URL, INSTAGRAM_URL } from "@/lib/constants";
+import { ORG_NAME, SITE_URL, INSTAGRAM_URL, OG_DEFAULTS } from "@/lib/constants";
 
 export const revalidate = 0;
 
+const PAGE_TITLE = "Adoptar un Perro en Santiago | Centro de Rescate Canino de Ñuñoa";
+
 export const metadata: Metadata = {
-  title: `Adopta un Perro | ${ORG_NAME}`,
+  // `absolute` opts out of the root layout's `%s | ${ORG_NAME}` template, which
+  // would otherwise append the org name a second time.
+  title: { absolute: PAGE_TITLE },
   description:
     "Conoce a los perros disponibles para adopción en nuestro refugio en Santiago, Chile. Encuentra a tu nuevo compañero y dale un hogar.",
   openGraph: {
-    title: `Adopta un Perro | ${ORG_NAME}`,
+    ...OG_DEFAULTS,
+    title: PAGE_TITLE,
     description:
       "Conoce a los perros disponibles para adopción en nuestro refugio en Santiago, Chile.",
     url: "/",
@@ -47,7 +52,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection
-        title="Centro de rescate canino de Ñuñoa"
+        title="Adopta un perro en el Centro de Rescate Canino de Ñuñoa"
         subtitle="Somos voluntarios que trabajamos en el Centro de Rescate Canino de Ñuñoa cuidando perros abandonados. Conócelos y cambia una vida — la de ellos y la tuya."
         cta={
           <a

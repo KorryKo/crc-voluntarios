@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 // Organization
 export const ORG_NAME = "Agrupación Voluntarios del rescate Canino ONG";
 
@@ -12,6 +14,24 @@ export const INSTAGRAM_HANDLE = "@adopcionescrc";
 
 // Site
 export const SITE_URL = "https://adoptaperroensantiago.cl";
+
+// Open Graph defaults.
+// Next.js merges `metadata` shallowly: a page that declares `openGraph` replaces
+// the root layout's object outright rather than merging into it, silently dropping
+// the image and site fields. Spread this into every page-level `openGraph`.
+export const OG_DEFAULTS = {
+  type: "website",
+  locale: "es_CL",
+  siteName: ORG_NAME,
+  images: [
+    {
+      url: "/crc-logo-preview.png",
+      width: 1200,
+      height: 630,
+      alt: `${ORG_NAME} - Refugio de Perros en Santiago, Chile`,
+    },
+  ],
+} satisfies NonNullable<Metadata["openGraph"]>;
 
 // Location
 export const LOCATION = {
